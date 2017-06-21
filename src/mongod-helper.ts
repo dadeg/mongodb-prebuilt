@@ -24,6 +24,7 @@ export class MongodHelper {
         this.mongoBin.childProcess.stderr.on('data', (data) => this.stderrHandler(data));
         this.mongoBin.childProcess.stdout.on('data', (data) => this.stdoutHandler(data));
         this.mongoBin.childProcess.on('close', (code) => this.closeHandler(code));
+        resolve(true);
       })
     })
   }
